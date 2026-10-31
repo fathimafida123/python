@@ -184,3 +184,45 @@ a=10
 b=a
 print(a is b)
 
+import copy
+
+a = [[1, 2], [3, 4]]
+b = a.copy()
+
+b[0].append(99)
+
+print(a)
+print(b)
+
+x = [1, 2]
+y = x
+print(x is y)
+y = y + [3]
+
+print(x)
+print(y)
+print(x is y)
+
+#global vs nonlocal
+x=10
+def data():
+    x=5
+data()
+print(x)    
+
+x=10
+def data():
+    global x
+    x=5
+data()
+print(x)  
+
+def outer():
+    count=3
+
+    def inner():
+        nonlocal count
+        count+=5
+    inner()
+    print(count)
+outer()
