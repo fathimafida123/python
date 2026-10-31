@@ -296,17 +296,73 @@ print(s.play())
 #     fun(n+1)
 # fun(1)     
 
-def factorial(n):
-    if n==0 or n==1:
-        return 1
-    return n*factorial(n-1)
-print(factorial(5))
+# def factorial(n):
+#     if n==0 or n==1:
+#         return 1
+#     return n*factorial(n-1)
+# print(factorial(5))
 
-def fibonacci(n):
-    if n==0:
-        return 0
-    if n==1:
-        return 1
-    return fibonacci(n-1)+fibonacci(n-2)
-print(fibonacci(3))     
+# def fibonacci(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return fibonacci(n-1)+fibonacci(n-2)
+# print(fibonacci(3))     
 
+list=[1,2,3,4]
+it=iter(list)
+print(next(it))
+print(next(it))
+
+class iterator:
+    def __init__(self,num):
+        self.num=num
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.num<=7:
+            print(self.num)
+            self.num+=1  
+        else:
+            raise StopIteration
+i=iterator(1)
+next(i)
+next(i)
+
+class Generator():
+    def fun(self):
+        yield 1
+        yield 2
+        yield 3
+g=Generator()
+f=g.fun()
+print(next(f))        
+print(next(f))
+
+def numbers():
+    yield 1
+    yield 2
+    return 3
+
+g = numbers()
+
+print(next(g))
+print(next(g))
+print(next(g))
+
+numbers=(x*2 for x in range(1,7))
+print(next(numbers))
+
+def count():
+    for x in range(1,8):
+        yield x
+for num in count():
+    print(num)        
+
+class count:
+    def gen(self):
+       yield from [1,2,4]
+c=count()
+for g in c.gen():
+    print(g)           
