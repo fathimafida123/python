@@ -248,4 +248,37 @@ rev=""
 print(s)
 for i in s:
     rev=i+" "+rev
-print(rev)    
+print(rev)
+
+str="programming"
+store={}
+for i in str:
+    if i not in store:
+        store[i]=1
+    else:
+        store[i]+=1
+print(store)            
+
+def decorator(fun):
+    def wrapper(*args):
+        print("start")
+        fun(*args)
+        print("finish")
+    return wrapper    
+@decorator
+def greet(a,b):
+    print(a+b)
+greet(2,8)            
+
+class Student():
+  school="Abc school" #class
+  def sound(self):
+      name="fida" #instance
+
+  def play(self):
+      game="football" #lcoal
+      return Student.school
+  
+s=Student()
+print(s.play()) 
+      
