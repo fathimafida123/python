@@ -238,3 +238,14 @@ def data(*args,**kwargs):
     print(kwargs)
     print(args)
 data(10,29,name="fida",age=18)
+
+data=[x*2 for x in range(1,9)]
+print(data)
+
+str= "i have a car"
+s=str.split(" ")
+rev=""
+print(s)
+for i in s:
+    rev=i+" "+rev
+print(rev)    
