@@ -310,59 +310,33 @@ print(s.play())
 #     return fibonacci(n-1)+fibonacci(n-2)
 # print(fibonacci(3))     
 
-list=[1,2,3,4]
-it=iter(list)
-print(next(it))
-print(next(it))
+def demo():
+    x = yield 10
+    print(x)
+    yield 20
 
-class iterator:
-    def __init__(self,num):
-        self.num=num
-    def __iter__(self):
-        return self
-    def __next__(self):
-        if self.num<=7:
-            print(self.num)
-            self.num+=1  
-        else:
-            raise StopIteration
-i=iterator(1)
-next(i)
-next(i)
-
-class Generator():
-    def fun(self):
-        yield 1
-        yield 2
-        yield 3
-g=Generator()
-f=g.fun()
-print(next(f))        
-print(next(f))
-
-def numbers():
-    yield 1
-    yield 2
-    return 3
-
-g = numbers()
+g = demo()
 
 print(next(g))
-print(next(g))
-print(next(g))
+print(g.send(50))
 
-numbers=(x*2 for x in range(1,7))
-print(next(numbers))
+def demo():
+    x=yield 1
+    # print("received: ",x)
+    yield x
+    yield 3
+d=demo()
+print(next(d))
+print(d.send(2))    
+print(next(d))
 
-def count():
-    for x in range(1,8):
-        yield x
-for num in count():
-    print(num)        
+class cal:
+    def __init__(self,a):
+        self.a=a
+    def __add__(self, other):
+        return self.a+other.a
+c1=cal(5)
+c2=cal(7)
+print(c1+c2)
 
-class count:
-    def gen(self):
-       yield from [1,2,4]
-c=count()
-for g in c.gen():
-    print(g)           
+
