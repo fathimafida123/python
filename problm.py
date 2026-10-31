@@ -226,3 +226,11 @@ def outer():
     inner()
     print(count)
 outer()
+
+def multiplier(n):
+    def calculate(x):
+       return x*n
+    return calculate
+double=multiplier(5)
+print(double(6))
+   
