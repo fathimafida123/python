@@ -275,12 +275,12 @@ class Student():
   def sound(self):
       name="fida" #instance
 
-  def play(self):
-      game="football" #lcoal
-      return Student.school
+def play():
+    game="football" #lcoal
+    return Student.school
   
 s=Student()
-print(s.play()) 
+print(play()) 
       
 # def fun(n):
 #     if n==0:
@@ -339,4 +339,75 @@ c1=cal(5)
 c2=cal(7)
 print(c1+c2)
 
+class Encapsulation:
+    def __init__(self,balance):
+        self.__balance=balance
+    @property
+    def get_balance(self):
+        return self.__balance     
+    def withdraw(self,amount):
+        if self.__balance >amount >0:
+            self.__balance-=amount
+            return self.__balance
+        else:
+            return "you cant withdraw amount"
+e=Encapsulation(1000)
+print(e.get_balance)
+print(e.withdraw(300))
+print(e.get_balance)
+          
+class Person:
+    def __init__(self,name):
+        self.name=name
+    def display(self):
+        print(f"name is  {self.name}")
+class Student(Person):
+    def __init__(self,name,cource):
+        super().__init__(name)
+        self.cource=cource
+    def display(self):
+        print(f"name is {self.name} and cource is {self.cource}")
 
+p=Student("fida","python")
+p.display()
+     
+
+class Animal:
+    pass
+class Cat(Animal):
+    def sound(self):
+        print("meow")
+class Dog(Animal):
+    def sound(self):
+        print("bark")
+c=Cat()
+c.sound()
+d=Dog()
+d.sound()
+
+from abc import ABC,abstractmethod
+class Abstract(ABC):
+    @abstractmethod
+    def withdraw(self):
+        pass
+    @abstractmethod
+    def deposit(self):
+        pass
+class ATM(Abstract):
+    def __init__(self,balance):
+        self.__balance=balance
+    def withdraw(self,amount):
+        if self.__balance>amount:
+            self.__balance-=amount
+            return self.__balance
+        else:
+            return "you cant withdarw this amount"
+    def deposit(self,amount):
+        if amount>0:
+            self.__balance+=amount
+            return self.__balance
+        else:
+            return "you cant deposit this amount"
+a=ATM(10000)
+print(a.withdraw(1000))
+print(a.deposit(700))
