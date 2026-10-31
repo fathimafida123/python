@@ -175,3 +175,12 @@ match day:
         print("wednesday")
     case _:
         print("invalid day")            
+
+a=10
+b=8
+print(a is not b)        
+
+a=10
+b=a
+print(a is b)
+
