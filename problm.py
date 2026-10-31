@@ -233,4 +233,8 @@ def multiplier(n):
     return calculate
 double=multiplier(5)
 print(double(6))
-   
+
+def data(*args,**kwargs):
+    print(kwargs)
+    print(args)
+data(10,29,name="fida",age=18)
