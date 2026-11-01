@@ -414,23 +414,111 @@
 
 
 
-def demo():
-    x=yield 1
-    print("received: ",x)
-    # yield x
-    yield 3
-d=demo()
-print(next(d))
-print(d.send(2))    
+# def demo():
+#     x=yield 1
+#     print("received: ",x)
+#     # yield x
+#     yield 3
+# d=demo()
 # print(next(d))
+# print(d.send(2))    
+# # print(next(d))
 
-try:
-    a=10
-    b=0
-    res=a/b
-except ZeroDivisionError:
-    print("you cant devide by zero")
-else:
-    print("result: ",res)   
-finally:
-    print("finished")     
+# try:
+#     a=10
+#     b=0
+#     res=a/b
+# except ZeroDivisionError:
+#     print("you cant devide by zero")
+# else:
+#     print("result: ",res)   
+# finally:
+#     print("finished")     
+
+
+# i=1
+# while(i<=5):
+#     print(i)
+#     i+=1
+
+# data=[1,2,3]
+# data.extend([4,5])
+# print(data)    
+# data.insert(1,7)
+# print(data)
+# data.pop(3)
+# print(data)
+# data.reverse()
+# print(data)
+# print(len(data))
+# print(data)
+# print(data[1:2])
+
+
+# data=(1,2,3)
+# print(data[0])
+# change=list(data)
+# change[1]=4
+# print(tuple(change))
+# print(data.count(2))
+
+# data={1,3,6,5,3}
+# print(data)
+# data.update([2,7,9,0])
+# print(data)
+# data.remove(9)
+# print(data)
+
+# data={x:x*x for x in range(2,10) if x%2==0}
+# print(data)
+# num1={"name":"fida","age":18}
+# num2={"cource":'python',"place":"vkd"}
+# num1.update(num2)
+# print(num1)
+
+students = {
+    "student1": {
+        "name": "Fida",
+        "age": 20,
+        "marks": {
+            "Python": 90,
+            "SQL": 85
+        }
+    },
+    "student2": {
+        "name": "Rahul",
+        "age": 21,
+        "marks": {
+            "Python": 95,
+            "SQL": 80
+        }
+    }
+}
+data=students["student1"]["age"]=20
+print(students["student1"])
+students["student2"]["marks"]["HTML"]=80
+print(students["student2"]["marks"]["HTML"])
+print(len(students))
+
+for key,value in students.items():
+    print(value["name"])
+   
+for key,value in students.items():
+    print(value["name"],value["marks"]["Python"])
+
+for key,value in students.items():
+    if value["marks"]["Python"]>80:
+        print(value["name"]) 
+total=0           
+for key,value in students.items():
+    for sub,mark in value["marks"].items():
+        total+=mark
+print(total)    
+
+highest=0
+for key,value  in students.items():
+    for sub,mark in value["marks"].items():
+        if highest<mark:
+            highest=mark
+print(highest)            
+

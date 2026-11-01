@@ -25,20 +25,20 @@
 # person = dict(name="Amina", age=20)
 # print(person)
 
-# marks={
-#     "maths":99,
-#     "physics":86,
-#     "biology":90
-# }
+marks={
+    "maths":99,
+    "physics":86,
+    "biology":90
+}
 
-# for i in marks.keys():
-#     print(i)
-# for i in marks.values():
-#     print(i)
-# for i in marks.items(): #it stores data inside tuple
-#     print(i)    
-# for sub,mark in marks.items(): #it store in seperate variable
-#     print(sub,mark)
+for i in marks.keys():
+    print(i)
+for i in marks.values():
+    print(i)
+for i in marks.items(): #it stores data inside tuple
+    print(i)    
+for sub,mark in marks.items(): #it store in seperate variable
+    print(sub,mark)
 # students={
 #     "student1":{"name":"fida",
 #     "age":18,
