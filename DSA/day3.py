@@ -31,4 +31,17 @@ head.next=Node(20)
 head.next.next=Node(30)
 print(head.data)
 print(head.next.data)
-print(head.next.next.data)        
+print(head.next.next.data)     
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+node1=Node(10)
+node2=node1
+print(node2.data)        
+
+node1=Node(20)
+node2=Node(30)
+node1.next=node2
+print(node1.next.data)
