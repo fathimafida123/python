@@ -100,6 +100,28 @@
 #     current=current.next
 
 
+# class Node:
+#     def __init__(self,data):
+#         self.data=data
+#         self.next=None
+# class LinkedList:
+#     def __init__(self):
+#         self.head=None
+#     def add(self,data):
+#         new_node=Node(data)
+#         new_node.next=self.head
+#         self.head=new_node
+#     def display(self):
+#         current=self.head
+#         while current is not None:
+#             print(current.data,end=" -> ") 
+#             current=current.next
+#         print("None")
+# ll=LinkedList()
+# ll.add(10)
+# ll.add(20)
+# ll.display()
+
 class Node:
     def __init__(self,data):
         self.data=data
@@ -118,10 +140,12 @@ class LinkedList:
             current=current.next
         print("None")
 ll=LinkedList()
-ll.add(10)
-ll.add(20)
-ll.display()
-
+a=[2,3,4]
+for i in reversed(a):
+    ll.add(i)
+ll.add(1)
+ll.display()    
+   
 
             
              
