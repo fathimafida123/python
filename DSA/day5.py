@@ -22,3 +22,12 @@ number=[1,2,3,4,5,6]
 print(binary_search(numbers,3))
 
 
+#bubble sort
+
+num=[1,3,6,2,9,5]
+n=len(num)
+for i in range(n):
+    for j in range(n-i-1):
+        if num[j]>num[j+1]:
+            num[j+1],num[j]=num[j],num[j+1]
+print(num)            
